@@ -247,6 +247,62 @@
       font-style: italic;
     }
 
+    /* Experience */
+    .exp-list { display: flex; flex-direction: column; }
+
+    .exp-item {
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .exp-item:first-child { padding-top: 0; }
+    .exp-item:last-child { border-bottom: none; }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 0.2rem;
+      flex-wrap: wrap;
+    }
+
+    .exp-role {
+      font-size: 0.925rem;
+      font-weight: 600;
+    }
+
+    .exp-company {
+      font-size: 0.925rem;
+      color: var(--muted);
+    }
+
+    .exp-period {
+      font-size: 0.8rem;
+      color: var(--muted);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .exp-location {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .exp-desc {
+      font-size: 0.875rem;
+      line-height: 1.65;
+      margin-bottom: 0.6rem;
+    }
+
+    .exp-stack {
+      font-size: 0.75rem;
+      color: var(--muted);
+      font-family: "SFMono-Regular", Consolas, monospace;
+      line-height: 1.6;
+    }
+
     /* Footer */
     footer {
       padding: 2rem 0;
@@ -274,6 +330,7 @@
     /* Responsive */
     @media (max-width: 480px) {
       nav { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .exp-header { flex-direction: column; gap: 0.2rem; }
     }
   </style>
 </head>
@@ -285,6 +342,7 @@
       <a href="/" class="nav-name">dilterporto.com</a>
       <ul class="nav-links">
         <li><a href="#sobre" data-i18n="nav.about">Sobre</a></li>
+        <li><a href="#experience" data-i18n="nav.experience">Experiência</a></li>
         <li><a href="#blog">Blog</a></li>
         <li><a href="mailto:contato@dilterporto.com" data-i18n="nav.contact">Contato</a></li>
         <li><button id="lang-toggle" aria-label="Alternar idioma">EN</button></li>
@@ -323,6 +381,94 @@
       </div>
     </section>
 
+    <!-- Experience -->
+    <section id="experience">
+      <p class="section-label" data-i18n="exp.label">Experiência</p>
+      <div class="exp-list">
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div><span class="exp-role">Senior Software Engineer</span><span class="exp-company"> · Beck Technology</span></div>
+            <span class="exp-period">Aug 2025 – Apr 2026</span>
+          </div>
+          <p class="exp-location">Austin, TX · Remote</p>
+          <p class="exp-desc">Contributed to DESTINI BidDay, a real-time bid leveling platform for construction estimating built on CQRS + Event Sourcing with 7 deployable services. Worked across .NET 8 backend services and a React 16 SPA, leveraging Azure Service Bus, Durable Functions, SignalR, and Redis.</p>
+          <p class="exp-stack">.NET 8 · C# · React 16 · TypeScript · CQRS · Event Sourcing · PostgreSQL · Azure SQL · Azure Service Bus · Durable Functions · SignalR · Redis · Azure AD B2C</p>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div><span class="exp-role">Senior Software Engineer</span><span class="exp-company"> · TOTUS Gift Card Management</span></div>
+            <span class="exp-period">Feb 2024 – Aug 2025</span>
+          </div>
+          <p class="exp-location">Chesterfield, MO · Remote</p>
+          <p class="exp-desc">Maintained and evolved a multi-tenant B2B platform orchestrating the full gift card lifecycle across 13 microservices and 75+ API endpoints, with integrations to Blackhawk, InComm, Fiserv, Shopify, and others. Built and maintained AWS CDK infrastructure in C# covering ECS Fargate, Aurora Serverless, DynamoDB, SQS, and EventBridge.</p>
+          <p class="exp-stack">.NET 6 · FastEndpoints · EF Core 7 · AWS CDK · ECS Fargate · Lambda · Aurora MySQL · DynamoDB · SQS · EventBridge · Cognito · Datadog</p>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div><span class="exp-role">Senior Software Engineer</span><span class="exp-company"> · Moz <span style="font-weight:400;font-size:0.8rem">(via Advantage Communications Group)</span></span></div>
+            <span class="exp-period">Jan 2023 – Feb 2024</span>
+          </div>
+          <p class="exp-location">Port Washington, NY · Remote</p>
+          <p class="exp-desc">Built backend services for a multi-tenant VoIP/UCaaS platform with 12 independently deployable services and MassTransit saga orchestration. Services ran on AWS Lambda and ECS Fargate with RabbitMQ and SQS/SNS for async messaging.</p>
+          <p class="exp-stack">.NET 6/8 · C# · CQRS · MassTransit · RabbitMQ · AWS Lambda · ECS Fargate · API Gateway · SQS/SNS · MySQL · SQL Server · EF Core · OAuth2/OIDC</p>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div><span class="exp-role">Senior Software Engineer</span><span class="exp-company"> · CloudCall</span></div>
+            <span class="exp-period">Jun 2021 – Dec 2022</span>
+          </div>
+          <p class="exp-location">Leicester, UK · Remote</p>
+          <p class="exp-desc">Led billing modernization and drove the migration from monolithic PHP services to cloud-native .NET and Node.js microservices on AWS. Built new services for product catalog, order processing, and payment reconciliation using EventBridge, SNS, SQS, and Step Functions.</p>
+          <p class="exp-stack">.NET 6 · MediatR · Hangfire · ECS · MySQL · Terraform · AWS CloudFormation/CDK · EventBridge · SNS · SQS · Step Functions · Node.js</p>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div><span class="exp-role">Senior Software Engineer</span><span class="exp-company"> · Vanco</span></div>
+            <span class="exp-period">Aug 2020 – Jun 2021</span>
+          </div>
+          <p class="exp-location">Bloomington, MN · Remote</p>
+          <p class="exp-desc">Built a REST API adapter wrapping Mastercard's ICCP SOAP services for corporate card payment integration, including a custom OAuth1 signing middleware for transparent request signing to Mastercard's API.</p>
+          <p class="exp-stack">.NET 5 · C# · MediatR · AutoMapper · SOAP · OAuth1 · Docker · Serilog · Swagger</p>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div><span class="exp-role">Tech Lead → Software Engineer</span><span class="exp-company"> · Stone Pagamentos</span></div>
+            <span class="exp-period">Aug 2018 – Aug 2020</span>
+          </div>
+          <p class="exp-location">São Paulo / Rio de Janeiro, Brazil</p>
+          <p class="exp-desc">Tech Lead for the Assets Trader platform — a mission-critical treasury system supporting Stone's entire internal trading operations, processing thousands of operations/day. Co-designed the CQRS architecture on Azure AKS, replacing manual workflows with an automated, auditable trading platform.</p>
+          <p class="exp-stack">.NET Core · C# · CQRS · MediatR · RabbitMQ · Azure AKS · Azure Event Hub · Terraform · Azure DevOps · React.js · TypeScript · Redux · SQL Server</p>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div><span class="exp-role">Lead Software Architect</span><span class="exp-company"> · Itix <span style="font-weight:400;font-size:0.8rem">(Unimed Vitória)</span></span></div>
+            <span class="exp-period">Mar 2014 – Aug 2018</span>
+          </div>
+          <p class="exp-location">Vitória, ES, Brazil</p>
+          <p class="exp-desc">Led the rewrite of a legacy Windows on-premise health insurance platform for Unimed, migrating it to a cloud-based web application on Azure. Built the authentication module with Identity Server/OAuth2 and the Medical Production module for TISS-compliant healthcare data exchange.</p>
+          <p class="exp-stack">ASP.NET Core 1.x · C# · Azure · Identity Server · OAuth2 · Entity Framework · SQL Server</p>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div><span class="exp-role">Software Engineer</span><span class="exp-company"> · Early Career</span></div>
+            <span class="exp-period">2006 – 2014</span>
+          </div>
+          <p class="exp-location">Espírito Santo & São Paulo, Brazil</p>
+          <p class="exp-desc">8 years building backend systems across VoIP/telecom, media, logistics, enterprise ERP, and fintech domains — progressing from intern to senior engineer. Built softphone components, e-commerce service layers, ERP systems with DDD/NHibernate, and a self-service customer portal with full-text search.</p>
+          <p class="exp-stack">C# · ASP.NET MVC · ASP.NET WebForms · SQL Server · NHibernate · jQuery · Winsockets</p>
+        </div>
+
+      </div>
+    </section>
+
     <!-- Blog -->
     <section id="blog">
       <p class="section-label">Blog</p>
@@ -343,19 +489,23 @@
     const T = {
       pt: {
         'nav.about':        'Sobre',
+        'nav.experience':   'Experiência',
         'nav.contact':      'Contato',
         'hero.tag':         'Desenvolvedor de Software',
         'hero.title':       'Olá, sou<br>Dilter Porto.',
         'hero.bio':         'Construo produtos digitais com foco em qualidade, performance e experiência do usuário. Apaixonado por tecnologia, código limpo e resolver problemas reais.',
+        'exp.label':        'Experiência',
         'blog.placeholder': 'Em breve — artigos sobre desenvolvimento, ferramentas e reflexões técnicas.',
         'footer.contact':   'Contato'
       },
       en: {
         'nav.about':        'About',
+        'nav.experience':   'Experience',
         'nav.contact':      'Contact',
         'hero.tag':         'Software Developer',
         'hero.title':       'Hi, I\'m<br>Dilter Porto.',
         'hero.bio':         'I build digital products focused on quality, performance, and user experience. Passionate about technology, clean code, and solving real problems.',
+        'exp.label':        'Experience',
         'blog.placeholder': 'Coming soon — articles on development, tools, and technical insights.',
         'footer.contact':   'Contact'
       }
